@@ -1,0 +1,135 @@
+.container{
+   
+    
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+@media (min-width:500px){
+   
+}
+/* small  */
+@media (min-width:768px) {
+    .container{
+        width: 750px;
+    }
+}
+/* medium */
+@media (min-width:992px) {
+    .container{
+        width: 970px;
+    }
+}
+/* large  */
+@media (min-width:1200px) {
+    .container{
+        width: 1170ox;
+    }
+}
+
+
+.main-title{
+    margin: 0 auto 80px;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-size: 30px;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    transition: .3s;
+    color: white;
+}
+.main-title::before,
+.main-title::after{
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: blue;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.main-title::after{
+   right: -30px;
+}
+.main-title::before{
+   left: -30px;
+
+}
+.main-title:hover::before{
+    z-index: -1;
+    animation: left-move .3s linear forwards;
+}
+.main-title:hover::after{
+    z-index: -1;
+    animation: right-move .3s linear forwards;
+}
+.main-title:hover{
+    color: white;
+    border: 1px solid black; 
+    transition-delay: .5s;
+}
+@keyframes left-move{
+    50%{
+        left: 0;
+        width: 12px;
+        height: 12px;
+    }
+    100%{
+        border-radius: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+}
+@keyframes right-move{
+    50%{
+        right: 0;
+        width: 12px;
+        height: 12px;
+    }
+    100%{
+        border-radius: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+}
+body{
+    background-image: url(../img/opop.jpg);
+    background-size: cover;
+    height: 563px;
+
+}
+.kudus{
+    padding-top: 30px;
+    margin: 30px;
+
+}
+.kudus  p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    line-height: 1.6;
+}
+.kudus .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(306px, 1fr));
+    gap: 30px;
+}
+iframe{
+    height: 200px;
+    width: 291px;
+    border-radius: 10px;
+}
+
+
+
